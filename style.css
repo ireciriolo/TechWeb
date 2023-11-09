@@ -11,6 +11,7 @@
     --footerBgColor: black;
     --footerTextColor: white;
     --visitedLinkColor: rgb(230,12,83);
+    --headtable: rgb(230,12,83);
     --linkColor: white;
     --flagColor: rgb(218,103,66);
     --font-body-family: "Roboto Condensed", sans-serif;
@@ -24,11 +25,27 @@ html{
     background-image: url("images/bg.png");
 }
 
+body{
+    display: flex; /*il testo si adatta verticamente al dispositivo*/
+    flex-direction: column;
+    min-height: 100vh; /*l'altezza minima del testo occupa il 100% del dispositivo*/
+}
+
 header{
     background-color: var(--headerBgColor);
     color: var(--headerTextColor);
     text-align: center;
     padding: 1em;
+}
+
+header h1{
+    text-indent: -999em; /*convenzione*/
+    background-image: url("images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 4em;
+    line-height: 1.5em;
 }
 
 nav{
@@ -74,6 +91,7 @@ nav a:visited{
 
 
 
+
 main{
     background-color: var(--mainBgColor);
     color: var(--mainTextColor);
@@ -93,21 +111,39 @@ main.colonne div dt, main.colonne div dd{
     display: inline;
     text-transform: uppercase;
 }
+
+.soldout{
+    background-image: url("images/soldout.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 dd.citta{
     color: var(--flagColor);
     font-weight: bold;
 }
+
 main dl div{
     padding-top:0.3em;
     padding-bottom: 0.3em;
 }
+
 main.colonne time span{
     font-weight: bold;
 }
 
 #imgIndex{
-    width: 40%;
+    width: 90%;
 }
+
+main h2{
+    text-align: center;
+    margin: 1em;
+    font-size: 2em;
+}
+
+
 
 footer{
     background-color: var(--footerBgColor);
@@ -115,4 +151,72 @@ footer{
     padding: 1.0em;
     text-align: center;
     margin-top: auto;
+}
+
+/***
+COMPONENTI
+***/
+#componenti{
+    margin: auto;
+    width: 95%;
+    max-width: 1024px;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+#componenti>dt{
+    background-color: var(--headtable);
+    color: var(--mainTextColor);
+    border: 1px solid black;
+    padding: 0.5em;
+    font-size: 1.1em;
+}
+
+#componenti>dd{
+    background-color: var(--mainBgColor);
+    border: 1px solid black;
+    border-top: none;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#componenti>dd img{
+    width: 15%;
+    float: left;
+    margin-right: 1em;
+}
+
+.componente dt{
+    float: left;
+    font-weight: bold;
+}
+
+/****
+TABELLA
+****/
+main table{
+    margin: auto;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+td, th{
+    border: 1px solid black;
+}
+
+th,td{
+    padding: 0.5em;
+}
+
+th{
+    font-weight: normal;
+}
+
+th time span{
+    font-weight: bold;
+}
+
+thead{
+    background-color: var(--flagColor);
+    color: var(--headerTextColor);
 }
